@@ -1,0 +1,29 @@
+
+
+
+app:
+# Проперти для теста чтобы вытянуть внутри приложения
+# Вытягивать будет анотацией @Value("${app.private-key}")
+ private-key: 12345
+
+
+#Configure starting server port
+server:
+  port: 8087
+
+#Configure logging
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+
+#Configure Spring framework
+spring:
+# Configure embedded database H2
+  h2:
+    console:
+      enabled: true
+# Configure embedded datasource
+  datasource:
+    url: jdbc:h2:./test;DB_CLOSE_ON_EXIT=FALSE
